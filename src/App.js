@@ -1,10 +1,10 @@
 import './App.css';
+import Navbar from './components/Navbar';
 
-let name = "Shivam"
 function App() {
   return (
     <>
-     
+<Navbar title= "TextUtils" />
     </>
   );
 }
