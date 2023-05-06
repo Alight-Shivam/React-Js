@@ -5,10 +5,13 @@ export default function TextForm(props) {
     const handleUpClick = ()=>{
         let newText = text.toUpperCase();
         setText(newText)
+        props.showAlert("Converted to uppercase!", "Success"); 
     }
     const handleLoClick = ()=>{
         let newText = text.toLowerCase();
         setText(newText)
+        props.showAlert("Converted to lowercase!", "Success"); 
+
     }
     const handleCopy = ()=>{
         let text = document.getElementById("myBox");
@@ -44,7 +47,7 @@ export default function TextForm(props) {
         setText(newText)
     }
     const handleOnChange = (event)=>{
-        setText(event.target.value); 
+        setText(event.target.value);
     }
     const [text, setText] = useState('Enter text Here');
     return (
