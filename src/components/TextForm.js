@@ -17,6 +17,7 @@ export default function TextForm(props) {
         let text = document.getElementById("myBox");
         text.select();
         navigator.clipboard.writeText(text.value);
+        props.showAlert("Copied to clipboard!", "success");
     }
     
     // const handleFirCharClick = () => {
@@ -39,12 +40,14 @@ export default function TextForm(props) {
 
     const handleExtraSpaces = ()=>{
         let newText = text.split(/[ ]+/);
-       setText(newText.join(" "))
+       setText(newText.join(" "));
+       props.showAlert("Extra Space removed!", "success");
     }
     
     const handleClearClick = ()=>{
         let newText = '';
-        setText(newText)
+        setText(newText);
+        props.Alert("Text Cleared!", "success");
     }
     const handleOnChange = (event)=>{
         setText(event.target.value);
