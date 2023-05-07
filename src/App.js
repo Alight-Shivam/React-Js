@@ -8,14 +8,13 @@ import About from './components/About';
 import {
   BrowserRouter as Router,
   // Switch,
-  Route,
-  Link
+  Route
+  // Link
 } from "react-router-dom";
 function App() {
   const [mode, setMode] = useState('light');
   const [alert, setAlert] = useState(null);
-
-const showAlert = (message, type)=>{
+  const showAlert = (message, type) => {
     setAlert({
       msg: message,
       type: type
@@ -24,9 +23,9 @@ const showAlert = (message, type)=>{
     setTimeout(() => {
       setAlert(null);
     }, 1500);
-}
+  }
 
-  const toggleMode = ()=>{
+  const toggleMode = () => {
     if (mode === 'light') {
       setMode('dark');
       document.body.style.backgroundColor = 'grey';
@@ -43,21 +42,21 @@ const showAlert = (message, type)=>{
   }
   return (
     <>
-  <Router>
-<Navbar title= "TextUtils" mode={mode} toggleMode={toggleMode} />
-<Alert alert = {alert}/>
-<div className="container my-3">
-  <Switch>
-    <Route exact path="/about">
-      <About />
-    </Route>
-    <Route path="/">
-    <TextForm exact showAlert ={showAlert} heading = "Enter the Text to Analyze Below"/>   
-    </Route>
-  </Switch>
-</div>
-  </Router>
-
+    {/* <Navbar/> */}
+      <Router>
+        <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
+        <Alert alert={alert} />
+        <div className="container my-3">
+          <Switch>
+            <Route exact path="/about">
+              <About />
+            </Route>
+            <Route path="/">
+              <TextForm exact showAlert={showAlert} heading="Enter the Text to Analyze Below" />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     </>
   );
 }
