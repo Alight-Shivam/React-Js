@@ -40,13 +40,13 @@ function App() {
     if (mode === 'light') {
       setMode('dark');
       document.body.style.backgroundColor = 'grey';
-      showAlert("Dark mode has been enabled", "success");
+      showAlert("Colour mode has been has been changed", "success");
       document.title = 'TextUtils - Dark Mode';
     }
     else {
       setMode('light');
       document.body.style.backgroundColor = 'white';
-      showAlert("Light mode has been enabled", "success");
+      showAlert("Colour mode has been has been changed", "success");
       document.title = 'TextUtils - Dark Mode';
 
     }
